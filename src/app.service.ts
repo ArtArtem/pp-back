@@ -39,6 +39,12 @@ const Ppdb = sequelize.define('Ppdb', {
   driveId: {
     type: DataTypes.STRING
   },
+  description: {
+    type: DataTypes.STRING
+  },
+  likes: {
+    type: DataTypes.NUMBER
+  },
 }, {
 });
 
