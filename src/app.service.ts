@@ -45,6 +45,9 @@ const Ppdb = sequelize.define('Ppdb', {
   likes: {
     type: DataTypes.NUMBER
   },
+  type: {
+    type: DataTypes.STRING
+  },
 }, {
 });
 
@@ -87,5 +90,10 @@ export class AppService {
     const saves = await Ppdb.findAll();
 
     return saves;
+  }
+
+  async like(body) {
+    const { id } = body;
+    await Ppdb.increment({ likes: 1 }, { where: { id } });
   }
 }

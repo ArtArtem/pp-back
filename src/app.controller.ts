@@ -28,4 +28,9 @@ export class AppController {
     return this.appService.getSaves();
   }
 
+  @Post('like')
+  like(@Req() request): any {
+    const body = request.body;
+    return this.appService.like(body);
+  }
 }
